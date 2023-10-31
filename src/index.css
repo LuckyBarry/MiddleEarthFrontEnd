@@ -84,6 +84,11 @@ button:focus-visible {
   margin: 20px;
 }
 .welcomeBackground {
+  display: flex;
+    flex-direction: column;
   text-align: center;
+  color: white;
+}
+.welcomeBackground h1 {
   color: white;
 }
