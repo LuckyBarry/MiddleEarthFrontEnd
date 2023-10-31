@@ -24,14 +24,11 @@
     justify-content: center;
     font-size: xx-large;
     padding: 20px;
+    width: 100%;
 }
 .navbar-container {
     display: flex;
     justify-content: center;
-}
-
-.navbar {
-    /* Remove width: 100%; */
 }
 
 .navbar-container {

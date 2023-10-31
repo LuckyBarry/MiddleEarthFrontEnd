@@ -82,3 +82,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.Signup {
+  color: white;
+}
+
+.signuplabels {
+  color: white;
+  font-size: xx-large;
+  padding: 20px;
+  margin: 20px;
+}

@@ -27,13 +27,13 @@ const SignupPage = () => {
 
     return (
         <>
-            <h1>Signup</h1>
+            <h1 className='Signup'>Signup</h1>
             <form onSubmit={handleSubmit}>
-                <label>
+                <label className='signuplabels'>
                     Email:
                     <input value={username} onChange={event => setUsername(event.target.value)} required />
                 </label>
-                <label>
+                <label className='signuplabels'>
                     Password
                     <input
                         value={password}
