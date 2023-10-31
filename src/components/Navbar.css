@@ -1,28 +1,29 @@
 .navbar {
-    font-size: 24px;
-    width: 100%;
-    color: rgb(203, 163, 43);
     background: rgba(0, 0, 0, 0.7);
-    /* Use rgba with an alpha value (0.7 in this example) */
     border-radius: 25px;
-    display: flexbox;
+    width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        z-index: 1;
+        /* Use a higher z-index to ensure it's above other elements */
 }
+
 
 .navbar a {
     color: rgb(255, 191, 0);
-    text-decoration: none;
-}
-
-.navbar button {
-    background-color: gold;
-    color: black;
 }
 
 .navBarLinks {
+    border-left: 50px;
+        border-right: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    font-size: xx-large;
+    justify-content: space-around;
+        font-size: x-large;
     padding: 20px;
     width: 100%;
 }
