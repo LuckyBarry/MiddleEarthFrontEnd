@@ -30,7 +30,7 @@ const SignupPage = () => {
             <h1>Signup</h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Username:
+                    Email:
                     <input value={username} onChange={event => setUsername(event.target.value)} required />
                 </label>
                 <label>

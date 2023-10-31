@@ -1,0 +1,28 @@
+.navbar {
+    font-size: 24px;
+    width: 100%;
+    color: rgb(80, 79, 76);
+    background: rgba(0, 0, 0, 0.7);
+    /* Use rgba with an alpha value (0.7 in this example) */
+    border-radius: 25px;
+    display: flexbox;
+    width: 100%;
+}
+
+.navbar a {
+    color: gold;
+    text-decoration: none;
+}
+
+.navbar button {
+    background-color: gold;
+    color: black;
+}
+
+.navBarLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: xx-large;
+    padding: 20px;
+}

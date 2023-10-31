@@ -1,17 +1,28 @@
-import { useState } from 'react'
-import './App.css'
+import { Link, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import AllPokerEventsPage from "./pages/AllPokerEventsPage";
+import CreatePokerEventPage from "./pages/CreatePokerEventPage";
+import LoginPage from "./pages/LoginPage";
+import PokerEventsDetailsPage from "./pages/PokerEventsDetailsPage";
+import PokerEventsReviewPage from "./pages/PokerEventsReviewPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
-    <div className="app">
-      <div className="background">
-        <h1>Welcome Poker Players of Middle Earth!</h1>
-        <h2>Log in to find your game of choice, or to create one.</h2>
-        <h2>New to this site? Then please register here.</h2>
-      </div>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/AllPokerEventsPage" element={<AllPokerEventsPage />} />
+        <Route path="/CreatePokerEventPage" element={<CreatePokerEventPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/PokerEventsDetailsPage" element={<PokerEventsDetailsPage />} />
+        <Route path="/PokerEventsReviewPage" element={<PokerEventsReviewPage />} />
+        <Route path="/SignUpPage" element={<SignUpPage />} />
+      </Routes>
+    </>
+  )
 }
-
 
 export default App
