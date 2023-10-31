@@ -7,7 +7,7 @@ function Homepage() {
         <div className="home-page">
             <div className="text-background">
 
-                <div className="background">
+                <div className="welcomeBackground">
                     <h1>Welcome Poker Players of Middle Earth!</h1>
                 </div>
 

@@ -22,10 +22,10 @@ function CreatePokerEventPage() {
             location,
             name,
             games,
-            buyin,
+            buyIn,
             capacity,
-            freegrog,
-            firstprize,
+            freeGrog,
+            firstPrize,
             imageUrl
         };
 
@@ -34,7 +34,7 @@ function CreatePokerEventPage() {
             return;
         }
 
-        const yearNumber = parseInt(values.year, 10);
+        const location = parseInt(values.location, 10);
         if (isNaN(yearNumber) || yearNumber < 2000) {
             setError("Invalid year.");
             return;
@@ -68,8 +68,8 @@ function CreatePokerEventPage() {
 
     return (
 
-        <div className="createYourOwnMoviePageCompleteScreen">
-            <form className="createMovieForm"
+        <div className="createPokerEvent">
+            <form className="createPokerEventForm"
                 onSubmit={onSubmit} >
                 {/* <table>
                     <tr>

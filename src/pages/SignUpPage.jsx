@@ -1,12 +1,12 @@
 import { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
 const SignupPage = () => {
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    const navigate = useNavigate() 
     const handleSubmit = async event => {
         event.preventDefault()
-        const payload = { username, password }
+        const payload = { email, password }
 
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/signup`, {
@@ -18,7 +18,8 @@ const SignupPage = () => {
             })
             if (response.status === 201) {
                 const parsed = await response.json()
-                console.log(parsed)
+                console.log(parsed) 
+                navigate("/LoginPage")
             }
         } catch (error) {
             console.log(error)
@@ -31,7 +32,7 @@ const SignupPage = () => {
             <form onSubmit={handleSubmit}>
                 <label className='signuplabels'>
                     Email:
-                    <input value={username} onChange={event => setUsername(event.target.value)} required />
+                    <input value={email} onChange={event => setEmail(event.target.value)} required type="email" />
                 </label>
                 <label className='signuplabels'>
                     Password

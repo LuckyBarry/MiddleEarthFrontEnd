@@ -26,12 +26,3 @@
     padding: 20px;
     width: 100%;
 }
-.navbar-container {
-    display: flex;
-    justify-content: center;
-}
-
-.navbar-container {
-    align-items: flex-start;
-    height: 100vh;
-}

@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
+import { AuthContext } from '../contexts/authContext'
 import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
@@ -7,13 +7,13 @@ const LoginPage = () => {
 
     const { handleLogin } = useContext(AuthContext)
 
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
 
     const handleSubmit = async event => {
         event.preventDefault()
-        const payload = { username, password }
+        const payload = { email, password }
 
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
@@ -43,8 +43,8 @@ const LoginPage = () => {
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Username:
-                    <input value={username} onChange={event => setUsername(event.target.value)} required />
+                    email:
+                    <input value={email} onChange={event => setEmail(event.target.value)} required type="email" />
                 </label>
                 <label>
                     Password
