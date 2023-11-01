@@ -98,3 +98,30 @@ button:focus-visible {
   font-size: x-large;
   font-weight: bold;
 }
+.profilePageBox {
+  padding: 50px;
+  font-size: x-large;
+}
+
+.loginHomePage {
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+}
+
+/* the styling for all the poker venues */
+
+.allPokerEventsPageImages {
+  width: 80vw;
+  border-radius: 12px;
+}
+
+/* .allPokerEventsPageTitlesOnImage {
+  position: absolute;
+  align-content: center;
+  top: 10px;
+  left: 75px;
+  background-color: none;
+  padding: 5px;
+  color: gold;
+} */

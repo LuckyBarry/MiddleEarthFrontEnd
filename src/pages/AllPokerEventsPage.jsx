@@ -14,6 +14,7 @@ function AllPokerEventsPage() {
             }
 
             const eventsData = await response.json();
+            console.log(eventsData)
             setPokerEvents(eventsData);
             setIsLoading(false);
         } catch (error) {
@@ -32,17 +33,20 @@ function AllPokerEventsPage() {
 
     return (
         <>
-            {pokerEvents.map((event) => (
-                <div key={event.id} className="poker-event">
+            {pokerEvents.map((event) => {
+                console.log(event)
+                return (
+                    <div key={event._id} className="poker-event">
                     <Link to={`/PokerEventsDetailsPage/${event._id}`}>
                         <div className="poker-event-wrapper">
-                            <img src={event.imageUrl} alt={event.title} className="allPokerEventsPageImages" />
-                            <h1 className="allPokerEventsPageTitlesOnImage"> {event.title} </h1>
+                                <img src={event.image} alt={event.name} className="allPokerEventsPageImages" />
+                                <h1 className="allPokerEventsPageTitlesOnImage"> {event.name} </h1>
                             <div className="poker-event-review">{event.review}</div>
                         </div>
                     </Link>
                 </div>
-            ))}
+                )
+            })}
         </>
     );
 }

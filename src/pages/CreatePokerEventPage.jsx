@@ -11,8 +11,9 @@ function CreatePokerEventPage() {
     const [capacity, setCapacity] = useState("");
     const [freeGrog, setFreegrog] = useState("");
     const [firstPrize, setFirstPrize] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    const [image, setImage] = useState("");
     const [error, setError] = useState("");
+    const token = localStorage.getItem("authToken")
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -26,37 +27,20 @@ function CreatePokerEventPage() {
             capacity,
             freeGrog,
             firstPrize,
-            imageUrl
+            image
         };
 
-        // if (!values.title.trim() || !values.year.trim() || !values.rating.trim()) {
-        //     setError("All fields are required.");
-        //     return;
-        // }
-
-        // const location = parseInt(values.location, 10);
-        // if (isNaN(yearNumber) || yearNumber < 2000) {
-        //     setError("Invalid year.");
-        //     return;
-        // }
-
-        // const ratingNumber = parseFloat(values.rating);
-        // if (isNaN(ratingNumber) || ratingNumber < 1 || ratingNumber > 5) {
-        //     setError("Rating must be between 1 and 5.");
-        //     return;
-        // }
-
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/PokerEvents`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/PokerEvents`, {
                 method: 'POST',
                 body: JSON.stringify(values),
-                headers: { 'Content-type': 'application/json' },
+                headers: { 'Content-type': 'application/json', Authorization: `Bearer ${token}`, },
             });
 
             if (response.ok) {
                 const newPokerEvent = await response.json();
                 console.log(newPokerEvent);
-                navigate(`/PokerEventsDetailsPage/${newPokerEvent.id}`);
+                navigate(`/PokerEventsDetailsPage/${newPokerEvent._id}`);
             } else {
                 setError("An error occurred while creating the poker event.");
             }
@@ -72,6 +56,7 @@ function CreatePokerEventPage() {
             <form className="createPokerEventForm"
                 onSubmit={onSubmit} >
                 <table>
+                    <tbody>
                     <tr>
                         <td>
                             <label htmlFor="location">Location:</label>
@@ -130,12 +115,14 @@ function CreatePokerEventPage() {
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="imageUrl">post your picture link here:</label>
+                                <label htmlFor="image">post your picture link here:</label>
                         </td>
                         <td>
-                            <input value={imageUrl} onChange={event => setImageUrl(event.target.value)} required id="imageUrl" />
+                                <input value={image} onChange={event => setImage(event.target.value)} required id="image" />
                         </td>
                     </tr>
+                    </tbody>
+
                 </table>
 
                 <button type='submit'>Create New Poker Event</button>

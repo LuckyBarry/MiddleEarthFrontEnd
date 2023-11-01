@@ -7,6 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import PokerEventsDetailsPage from "./pages/PokerEventsDetailsPage";
 import PokerEventsReviewPage from "./pages/PokerEventsReviewPage";
 import SignUpPage from "./pages/SignUpPage";
+import CreateReviewPage from "./pages/CreateReviewPage";
+import ProfilePage from "./pages/ProfilePage";
+
 
 function App() {
   return (
@@ -20,6 +23,8 @@ function App() {
         <Route path="/PokerEventsDetailsPage" element={<PokerEventsDetailsPage />} />
         <Route path="/PokerEventsReviewPage" element={<PokerEventsReviewPage />} />
         <Route path="/SignUpPage" element={<SignUpPage />} />
+        <Route path="/CreateReviewPage" element={<CreateReviewPage />} />
+        <Route path="/ProfilePage" element={<ProfilePage />} />
       </Routes>
     </>
   )
