@@ -92,3 +92,9 @@ button:focus-visible {
 .welcomeBackground h1 {
   color: white;
 }
+.createPokerEvent {
+  padding: 50px;
+  color: gold;
+  font-size: x-large;
+  font-weight: bold;
+}

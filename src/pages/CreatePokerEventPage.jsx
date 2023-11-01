@@ -47,7 +47,7 @@ function CreatePokerEventPage() {
         }
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/Movies`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/PokerEvents`, {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: { 'Content-type': 'application/json' },
@@ -55,14 +55,14 @@ function CreatePokerEventPage() {
 
             if (response.ok) {
                 const newMovie = await response.json();
-                console.log(newMovie);
-                navigate(`/MoviesDetailsPage/${newMovie.id}`);
+                console.log(newPokerEvent);
+                navigate(`/PokerEventsDetailsPage/${newPokerEvent.id}`);
             } else {
-                setError("An error occurred while creating the movie.");
+                setError("An error occurred while creating the poker event.");
             }
         } catch (error) {
             console.error(error);
-            setError("An error occurred while creating the movie.");
+            setError("An error occurred while creating the poker event.");
         }
     }
 
@@ -71,34 +71,73 @@ function CreatePokerEventPage() {
         <div className="createPokerEvent">
             <form className="createPokerEventForm"
                 onSubmit={onSubmit} >
-                {/* <table>
+                <table>
                     <tr>
-                        <td><label for="title">Title:</label>
+                        <td>
+                            <label htmlFor="location">Location:</label>
                         </td>
-                        <td><input value={title} onChange={event => setTitle(event.target.value)} required id="title" />
-                        </td>
-                        <td><label for="year">Year:</label>
-                        </td>
-                        <td><input type='text' value={year} onChange={event => setYear(event.target.value)} required inputMode="numeric" pattern="[0-9]*" />
-                        </td>
-                        <td><label for="rating">Rating:</label>
-                        </td>
-                        <td><input type='text' value={rating} onChange={event => setRating(event.target.value)} required inputMode="decimal" pattern="[0-9]*" />
-                        </td>
-                        <td><label for="description">Description:</label>
-                        </td>
-                        <td><input value={description} onChange={event => setDescription(event.target.value)} required />
-                        </td>
-                        <td><label for="Image">Image:</label>
-                        </td>
-                        <td><input value={imageUrl} onChange={event => setImageUrl(event.target.value)} required />
-                        </td>
-                        <td><label for="review">Review:</label>
-                        </td>
-                        <td><input value={review} onChange={event => setReview(event.target.value)} required />
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
                         </td>
                     </tr>
-                </table> */}
+                    <tr>
+                        <td>
+                            <label htmlFor="namePokervenue">Pokervenue:</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="location">Location</label>
+                        </td>
+                        <td>
+                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                        </td>
+                    </tr>
+                </table>
+
                 <button type='submit'>Create New Poker Event</button>
             </form>
         </div>
@@ -107,12 +146,3 @@ function CreatePokerEventPage() {
 }
 
 export default CreatePokerEventPage;
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-
-// function CreatePokerEventPage() {
-
-// }
-
-// export default CreatePokerEventPage;
