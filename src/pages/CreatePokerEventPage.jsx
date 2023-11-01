@@ -7,10 +7,10 @@ function CreatePokerEventPage() {
     const [location, setLocation] = useState("");
     const [name, setName] = useState("");
     const [games, setGames] = useState("");
-    const [buyin, setBuyin] = useState("");
+    const [buyIn, setBuyIn] = useState("");
     const [capacity, setCapacity] = useState("");
-    const [freegrog, setFreegrog] = useState("");
-    const [firstprize, setFirstprize] = useState("");
+    const [freeGrog, setFreegrog] = useState("");
+    const [firstPrize, setFirstPrize] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const [error, setError] = useState("");
 
@@ -29,22 +29,22 @@ function CreatePokerEventPage() {
             imageUrl
         };
 
-        if (!values.title.trim() || !values.year.trim() || !values.rating.trim()) {
-            setError("All fields are required.");
-            return;
-        }
+        // if (!values.title.trim() || !values.year.trim() || !values.rating.trim()) {
+        //     setError("All fields are required.");
+        //     return;
+        // }
 
-        const location = parseInt(values.location, 10);
-        if (isNaN(yearNumber) || yearNumber < 2000) {
-            setError("Invalid year.");
-            return;
-        }
+        // const location = parseInt(values.location, 10);
+        // if (isNaN(yearNumber) || yearNumber < 2000) {
+        //     setError("Invalid year.");
+        //     return;
+        // }
 
-        const ratingNumber = parseFloat(values.rating);
-        if (isNaN(ratingNumber) || ratingNumber < 1 || ratingNumber > 5) {
-            setError("Rating must be between 1 and 5.");
-            return;
-        }
+        // const ratingNumber = parseFloat(values.rating);
+        // if (isNaN(ratingNumber) || ratingNumber < 1 || ratingNumber > 5) {
+        //     setError("Rating must be between 1 and 5.");
+        //     return;
+        // }
 
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/PokerEvents`, {
@@ -54,7 +54,7 @@ function CreatePokerEventPage() {
             });
 
             if (response.ok) {
-                const newMovie = await response.json();
+                const newPokerEvent = await response.json();
                 console.log(newPokerEvent);
                 navigate(`/PokerEventsDetailsPage/${newPokerEvent.id}`);
             } else {
@@ -82,58 +82,58 @@ function CreatePokerEventPage() {
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="namePokervenue">Pokervenue:</label>
+                            <label htmlFor="name">Name of the venue:</label>
                         </td>
                         <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="location">Location</label>
-                        </td>
-                        <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                            <input value={name} onChange={event => setName(event.target.value)} required id="name" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="location">Location</label>
+                            <label htmlFor="games">Which games are being played:</label>
                         </td>
                         <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="location">Location</label>
-                        </td>
-                        <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                            <input value={games} onChange={event => setGames(event.target.value)} required id="games" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="location">Location</label>
+                            <label htmlFor="buyIn">Buy-in:</label>
                         </td>
                         <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="location">Location</label>
-                        </td>
-                        <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                            <input value={buyIn} onChange={event => setBuyIn(event.target.value)} required id="location" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="location">Location</label>
+                            <label htmlFor="capacity">Capacity:</label>
                         </td>
                         <td>
-                            <input value={location} onChange={event => setLocation(event.target.value)} required id="location" />
+                            <input value={capacity} onChange={event => setCapacity(event.target.value)} required id="capacity" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="freeGrog">Is there free grog:</label>
+                        </td>
+                        <td>
+                            <input value={freeGrog} onChange={event => setFreegrog(event.target.value)} required id="freeGrog" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="firstPrize">What is the first prize:</label>
+                        </td>
+                        <td>
+                            <input value={firstPrize} onChange={event => setFirstPrize(event.target.value)} required id="firstPrize" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="imageUrl">post your picture link here:</label>
+                        </td>
+                        <td>
+                            <input value={imageUrl} onChange={event => setImageUrl(event.target.value)} required id="imageUrl" />
                         </td>
                     </tr>
                 </table>
