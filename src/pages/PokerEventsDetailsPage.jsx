@@ -127,11 +127,15 @@ function PokerEventsDetailsPage() {
                     <p>First Prize: {pokerEvent.firstPrize}</p>
                     <img src={pokerEvent.image} alt={pokerEvent.name} className="PokerEventsDetailsPageImages" />
                     <br></br>
+                        <div className="eventDetailsButtons">
                     <button onClick={editPokerEvent}>Edit Poker Event</button>
                     <button onClick={deletePokerEvent}>Delete Poker Event</button>
+                        </div>
+
                 </>
             )}
-            <div>
+            <h2>Reviews about this venue:</h2>
+            <div className="reviewStyles">
                 {reviews.map(review => (
                     <div key={review._id}>
                         <p>
@@ -144,6 +148,12 @@ function PokerEventsDetailsPage() {
                         </p>
                     </div>
                 ))}
+            </div>
+            <div className="reviewSection">
+                <label>Write your own review about this place</label>
+                <br></br>
+                <input className="reviewInputField"></input>
+                <button onClick={editPokerEvent}>Submit Thou Review!</button>
             </div>
         </div>
     );
