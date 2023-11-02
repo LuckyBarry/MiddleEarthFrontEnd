@@ -7,14 +7,15 @@ function Homepage() {
         <div className="home-page">
 
                 <div className="welcomeBackground">
-                <h1>Welcome Poker Players!</h1>
-                <h1>to the Middle Earth Rounders Club</h1>
+                <h1>&nbsp;&nbsp;&nbsp;Welcome Poker Players...</h1>
+                <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the Middle Earth Rounders Club</h1>
                 </div>
 
                 <div className="loginHomePage">
-                <Link to="/LoginPage">Allready a regular? LOG IN.</Link>
-                <Link to="/SignUpPage">New to this site? Please register here.</Link>
+                <Link to="/LoginPage" className="link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Already a regular? LOG IN.</Link>
+                <Link to="/SignUpPage" className="link">&nbsp;&nbsp;&nbsp;New to this site? Please register here.</Link>
             </div>
+
         </div >
     );
 }

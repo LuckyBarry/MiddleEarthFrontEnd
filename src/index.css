@@ -62,8 +62,9 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: white;
     background-color: #ffffff;
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
   }
   a:hover {
     color: #f53315;
@@ -83,15 +84,7 @@ button:focus-visible {
   padding: 20px;
   margin: 20px;
 }
-.welcomeBackground {
-  display: flex;
-    flex-direction: column;
-  text-align: center;
-  color: white;
-}
-.welcomeBackground h1 {
-  color: white;
-}
+
 .createPokerEvent {
   padding: 50px;
   color: gold;
@@ -103,11 +96,38 @@ button:focus-visible {
   font-size: x-large;
 }
 
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  color: gold;
+  font-size: 25px;
+  text-shadow: 4px 4px 0 black, -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black;
+}
+
+
+.loginHomePage {
+  text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+
+/* In your CSS file */
+.link {
+  font-size: 35px;
+  margin-right: 100px;
+  /* Add margin as needed */
+}
+
+/* Add margin or padding as needed */
 .loginHomePage {
   display: flex;
   flex-direction: row;
-  font-size: xx-large;
+  font-size: x-large;
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
+
 
 /* the styling for all the poker venues */
 
