@@ -30,7 +30,7 @@ const LoginPage = () => {
             if (response.status === 200) {
                 const parsed = await response.json()
                 handleLogin(parsed.token)
-                navigate('/ProfilePage')
+                navigate('/AllPokerEventsPage')
             }
         } catch (error) {
             console.log(error)

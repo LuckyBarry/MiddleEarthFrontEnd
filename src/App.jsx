@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import PokerEventsDetailsPage from "./pages/PokerEventsDetailsPage";
 import SignUpPage from "./pages/SignUpPage";
 import CreateReviewPage from "./pages/CreateReviewPage";
-import ProfilePage from "./pages/ProfilePage";
+
 import PrivateRoute from "./components/PrivateRoute";
 
 
@@ -29,7 +29,6 @@ function App() {
         </PrivateRoute>} />
         <Route path="/SignUpPage" element={<SignUpPage />} />
         <Route path="/CreateReviewPage" element={<CreateReviewPage />} />
-        <Route path="/ProfilePage" element={<ProfilePage />} />
       </Routes>
     </>
   )

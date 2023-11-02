@@ -5,12 +5,33 @@ function PokerEventsDetailsPage() {
     const { id } = useParams();
     const [pokerEvent, setPokerEvent] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
+    const [newReview, setNewReview] = useState("")
     const apiUrl = `${import.meta.env.VITE_API_URL}/api/pokerEvents/${id}`; // Update the API endpoint
     const navigate = useNavigate();
+    const token = localStorage.getItem("authToken")
     const [reviews, setReviews] = useState([])
     const editPokerEvent = () => {
         setIsEditing(true);
     };
+    const postReview = async () => {
+        const apiReviewsUrl = `${import.meta.env.VITE_API_URL}/api/reviews/${id}`;
+        try {
+            const response = await fetch(apiReviewsUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json', Authorization: `Bearer ${token}`
+                }, body: JSON.stringify({ review: newReview })
+            })
+            if (response.ok) {
+                const parsed = await response.json()
+                console.log(parsed)
+                await fetchReviews()
+
+                setNewReview("")
+            }
+        } catch (error) { console.log(error) }
+
+    }
     async function fetchReviews() {
         const apiReviewsUrl = `${import.meta.env.VITE_API_URL}/api/reviews/${id}`;
         try {
@@ -152,8 +173,10 @@ function PokerEventsDetailsPage() {
             <div className="reviewSection">
                 <label>Write your own review about this place</label>
                 <br></br>
-                <input className="reviewInputField"></input>
-                <button onClick={editPokerEvent}>Submit Thou Review!</button>
+                <input className="reviewInputField" onChange={(event) => {
+                    setNewReview(event.target.value)
+                }} value={newReview} />
+                <button type="button" onClick={postReview}>Submit Thou Review!</button>
             </div>
         </div>
     );
