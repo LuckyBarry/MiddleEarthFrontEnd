@@ -5,10 +5,10 @@ import AllPokerEventsPage from "./pages/AllPokerEventsPage";
 import CreatePokerEventPage from "./pages/CreatePokerEventPage";
 import LoginPage from "./pages/LoginPage";
 import PokerEventsDetailsPage from "./pages/PokerEventsDetailsPage";
-import PokerEventsReviewPage from "./pages/PokerEventsReviewPage";
 import SignUpPage from "./pages/SignUpPage";
 import CreateReviewPage from "./pages/CreateReviewPage";
 import ProfilePage from "./pages/ProfilePage";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
@@ -17,11 +17,16 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/AllPokerEventsPage" element={<AllPokerEventsPage />} />
-        <Route path="/CreatePokerEventPage" element={<CreatePokerEventPage />} />
+        <Route path="/AllPokerEventsPage" element={<PrivateRoute>
+          <AllPokerEventsPage />
+        </PrivateRoute>} />
+        <Route path="/CreatePokerEventPage" element={<PrivateRoute>
+          <CreatePokerEventPage />
+        </PrivateRoute>} />
         <Route path="/LoginPage" element={<LoginPage />} />
-        <Route path="/PokerEventsDetailsPage" element={<PokerEventsDetailsPage />} />
-        <Route path="/PokerEventsReviewPage" element={<PokerEventsReviewPage />} />
+        <Route path="/PokerEventsDetailsPage/:id" element={<PrivateRoute>
+          <PokerEventsDetailsPage />
+        </PrivateRoute>} />
         <Route path="/SignUpPage" element={<SignUpPage />} />
         <Route path="/CreateReviewPage" element={<CreateReviewPage />} />
         <Route path="/ProfilePage" element={<ProfilePage />} />

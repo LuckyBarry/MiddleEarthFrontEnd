@@ -55,7 +55,7 @@ const AuthContextProvider = (props) => {
     }
 
     return (
-        <AuthContext.Provider value={{ fetchWithToken, isLoading, isAuthenticated, handleLogin }}>
+        <AuthContext.Provider value={{ fetchWithToken, isLoading, isAuthenticated, handleLogin, setIsAuthenticated, setIsLoading }}>
             {props.children}
         </AuthContext.Provider>
     )

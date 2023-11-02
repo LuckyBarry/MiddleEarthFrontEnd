@@ -36,12 +36,11 @@ function AllPokerEventsPage() {
             {pokerEvents.map((event) => {
                 console.log(event)
                 return (
-                    <div key={event._id} className="poker-event">
+                    <div key={event._id} className="allpokereventspage">
                     <Link to={`/PokerEventsDetailsPage/${event._id}`}>
                         <div className="poker-event-wrapper">
                                 <img src={event.image} alt={event.name} className="allPokerEventsPageImages" />
                                 <h1 className="allPokerEventsPageTitlesOnImage"> {event.name} </h1>
-                            <div className="poker-event-review">{event.review}</div>
                         </div>
                     </Link>
                 </div>

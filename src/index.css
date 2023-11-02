@@ -111,17 +111,22 @@ button:focus-visible {
 
 /* the styling for all the poker venues */
 
+.allpokereventspage {
+  position: relative;
+  margin: 10px;
+}
 .allPokerEventsPageImages {
+  margin-top: 150px;
   width: 80vw;
   border-radius: 12px;
 }
 
-/* .allPokerEventsPageTitlesOnImage {
+.allPokerEventsPageTitlesOnImage {
   position: absolute;
   align-content: center;
-  top: 10px;
+  bottom: 10px;
   left: 75px;
   background-color: none;
   padding: 5px;
   color: gold;
-} */
+}
