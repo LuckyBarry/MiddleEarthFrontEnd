@@ -39,15 +39,15 @@ const LoginPage = () => {
     }
 
     return (
-        <>
-            <h1 >Login</h1>
+        <div className="loginPageContainer">
+            <h1 className='Signup'>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label>
-                    email:
+                <label className='signuplabels'>
+                    Email:
                     <input value={email} onChange={event => setEmail(event.target.value)} required type="email" />
                 </label>
-                <label>
-                    Password
+                <label className='signuplabels'>
+                    Password:
                     <input
                         value={password}
                         onChange={event => setPassword(event.target.value)}
@@ -58,8 +58,33 @@ const LoginPage = () => {
                 <button type='submit'>Log In</button>
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             </form>
-        </>
-    )
+        </div>
+    );
+
+
+
+    // return (
+    //     <div className='loginPageContainer'>
+    //         <h1 >Login</h1>
+    //         <form onSubmit={handleSubmit}>
+    //             <label>
+    //                 email:
+    //                 <input value={email} onChange={event => setEmail(event.target.value)} required type="email" />
+    //             </label>
+    //             <label>
+    //                 Password
+    //                 <input
+    //                     value={password}
+    //                     onChange={event => setPassword(event.target.value)}
+    //                     required
+    //                     type='password'
+    //                 />
+    //             </label>
+    //             <button type='submit'>Log In</button>
+    //             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+    //         </form>
+    //     </div>
+    // )
 }
 
 export default LoginPage

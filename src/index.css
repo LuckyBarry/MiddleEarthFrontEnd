@@ -175,3 +175,12 @@ button:focus-visible {
   width: 400px;
   height: 100px;
 }
+.loginPageContainer {
+  left: 50px;
+}
+
+.PokerEventsDetailsPageImages {
+  margin-top: 100px;
+  width: 60vw;
+  border-radius: 12px;
+}
