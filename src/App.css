@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  background-image: url("./assets/Images/lotrMapWallpaper.jpeg") no-repeat center center fixed;
+  background-image: url("./lotrMapWallpaper.jpeg") no-repeat center center fixed;
   background-size: cover;
 }
 #root {
