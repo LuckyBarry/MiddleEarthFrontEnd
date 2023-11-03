@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import PokerEventsDetailsPage from "./pages/PokerEventsDetailsPage";
 import SignUpPage from "./pages/SignUpPage";
 import CreateReviewPage from "./pages/CreateReviewPage";
-
+import './App.css'
 import PrivateRoute from "./components/PrivateRoute";
 
 
