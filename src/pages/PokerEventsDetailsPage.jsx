@@ -139,7 +139,7 @@ function PokerEventsDetailsPage() {
                 </form>
             ) : (
                 <>
-                    <h1>{pokerEvent.name}</h1>
+                        <h1 className="bringMeDown">{pokerEvent.name}</h1>
                     <p>Location: {pokerEvent.location}</p>
                     <p>Games: {pokerEvent.games}</p>
                     <p>Buy-In: {pokerEvent.buyIn}</p>
